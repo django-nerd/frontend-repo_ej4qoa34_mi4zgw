@@ -1,28 +1,34 @@
-import { useState } from 'react'
+import Hero from "./components/Hero";
+import Features from "./components/Features";
+import Testimonials from "./components/Testimonials";
+import Pricing from "./components/Pricing";
+import Footer from "./components/Footer";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
+    <div className="min-h-screen bg-white text-slate-900">
+      <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-slate-900/70 backdrop-blur">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 text-white">
+          <a href="#accueil" className="font-manrope text-lg font-extrabold tracking-tight">Ebook Pro</a>
+          <nav className="hidden items-center gap-6 text-sm text-slate-200 md:flex">
+            <a href="#features" className="hover:text-white">Fonctionnalités</a>
+            <a href="#temoignages" className="hover:text-white">Témoignages</a>
+            <a href="#acheter" className="hover:text-white">Prix</a>
+            <a href="#acheter" className="rounded-md bg-fuchsia-600 px-4 py-2 font-semibold text-white hover:bg-fuchsia-700">Acheter</a>
+          </nav>
         </div>
-      </div>
+      </header>
+
+      <main className="pt-16">
+        <Hero />
+        <Features />
+        <Testimonials />
+        <Pricing />
+      </main>
+
+      <Footer />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
